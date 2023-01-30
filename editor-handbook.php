@@ -1,12 +1,14 @@
 <?php
-/*
-	Plugin Name: DevCollaborative Editor Handbook
-	Plugin URI: https://github.com/devcollaborative/editor-handbook
-	Description: Private content type for in-site documentation
-	Version: 1.0
-	Author: DevCollaborative
-	Author URI: https://devcollaborative.com/
-*/
+/**
+ * Plugin Name: DevCollaborative Editor Handbook
+ * Plugin URI: https://github.com/devcollaborative/editor-handbook
+ * Description: Private content type for in-site documentation
+ * Version: 1.1.0
+ * Author: DevCollaborative
+ * Author URI: https://devcollaborative.com/
+ * GitHub Plugin URI: devcollaborative/editor-handbook
+ * Primary Branch: main
+ */
 
 defined( 'ABSPATH' ) or exit;
 
