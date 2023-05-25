@@ -8,8 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Custom capabilities for the Handbook post type
+- Plugin activation & update hooks for managing capabilities
 
 ### Changed
+- Handbook pages can now be viewed (but not edited) by Authors
+- The default capability for viewing the handbook admin page is now `read_private_handbooks`
+- Show helpdesk info only for users who can edit handbook posts
 
 ### Deprecated
 
