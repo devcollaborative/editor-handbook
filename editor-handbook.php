@@ -199,9 +199,11 @@ function handbook_admin_page() {
 			<?php endforeach; ?>
 		</ul>
 
-		<h3>Still need help?</h3>
-		<p>If you still need help, reach out by filing a helpdesk ticket.</p>
-		<p><a href="https://devcollaborative.com/helpdesk" target="_blank">https://devcollaborative.com/helpdesk</a></p>
+		<?php if ( current_user_can( 'edit_handbooks' ) ): ?>
+			<h3>Still need help?</h3>
+			<p>If you still need help, reach out by filing a helpdesk ticket.</p>
+			<p><a href="https://devcollaborative.com/helpdesk" target="_blank">https://devcollaborative.com/helpdesk</a></p>
+		<?php endif; ?>
 	</div>
 
 	<?php
