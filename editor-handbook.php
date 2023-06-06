@@ -12,6 +12,66 @@
 
 defined( 'ABSPATH' ) or exit;
 
+define( 'EDITOR_HANDBOOK_VERSION', '1.1.0' );
+
+/**
+ * Run plugin update process on activation.
+ */
+function editor_handbook_activate() {
+	editor_handbook_update_check();
+}
+register_activation_hook( __FILE__, 'editor_handbook_activate' );
+
+/**
+ * Checks the current plugins version, and runs the update process if versions don't match.
+ */
+function editor_handbook_update_check() {
+	if ( EDITOR_HANDBOOK_VERSION !== get_option( 'editor_handbook_version' ) ) {
+
+		// Update with new plugin version.
+		update_option( 'editor_handbook_version', EDITOR_HANDBOOK_VERSION );
+
+		// Set capabilities again, in case there have been updates.
+		editor_handbook_set_caps();
+	}
+}
+add_action( 'plugins_loaded', 'editor_handbook_update_check' );
+
+/**
+ * Add handbook capabilities.
+ */
+function editor_handbook_set_caps() {
+	$administrator = get_role('administrator');
+	$editor        = get_role('editor');
+	$author        = get_role('author');
+
+	$all_caps = array(
+		'edit_handbook',
+		'read_handbook',
+		'delete_handbook',
+		'edit_handbooks',
+		'edit_others_handbooks',
+		'delete_handbooks',
+		'publish_handbooks',
+		'read_private_handbooks',
+		'delete_private_handbooks',
+		'delete_published_handbooks',
+		'delete_others_handbooks',
+		'edit_private_handbooks',
+		'edit_published_handbooks',
+	);
+
+	// Give admins and editors full access.
+	foreach ($all_caps as $cap) {
+		$administrator->add_cap( $cap );
+		$editor->add_cap( $cap );
+	}
+
+	// Give authors read-only access.
+	$author->add_cap( 'read_handbooks' );
+	$author->add_cap( 'read_private_handbooks' );
+}
+
 /**
  *  Register Custom Post Type for handbook
  */
@@ -60,7 +120,8 @@ function devcollab_handbook_post_type() {
 		'can_export'            => true,
 		'has_archive'           => true,
 		'public' 								=> true,
-		'capability_type'       => 'post',
+		'capability_type'       => array( 'handbook', 'handbooks' ),
+		'map_meta_cap' 					=> true,
 	);
 	register_post_type( 'handbook', $args );
 
@@ -105,7 +166,7 @@ function handbook_admin_menu() {
     'edit.php?post_type=handbook',
     $handbook->labels->menu_name,
     $handbook->labels->menu_name,
-    'edit_posts',
+    'read_private_handbooks',
     'handbook',
     'handbook_admin_page',
 		0
@@ -138,9 +199,11 @@ function handbook_admin_page() {
 			<?php endforeach; ?>
 		</ul>
 
-		<h3>Still need help?</h3>
-		<p>If you still need help, reach out by filing a helpdesk ticket.</p>
-		<p><a href="https://devcollaborative.com/helpdesk" target="_blank">https://devcollaborative.com/helpdesk</a></p>
+		<?php if ( current_user_can( 'edit_handbooks' ) ): ?>
+			<h3>Still need help?</h3>
+			<p>If you still need help, reach out by filing a helpdesk ticket.</p>
+			<p><a href="https://devcollaborative.com/helpdesk" target="_blank">https://devcollaborative.com/helpdesk</a></p>
+		<?php endif; ?>
 	</div>
 
 	<?php
