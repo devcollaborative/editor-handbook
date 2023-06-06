@@ -8,13 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Custom capabilities for the Handbook post type
-- Plugin activation & update hooks for managing capabilities
 
 ### Changed
-- Handbook pages can now be viewed (but not edited) by Authors
-- The default capability for viewing the handbook admin page is now `read_private_handbooks`
-- Show helpdesk info only for users who can edit handbook posts
 
 ### Deprecated
 
@@ -23,6 +18,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 ### Security
+
+## [1.2.0] - 2023-06-06
+
+### Added
+- Custom capabilities for the Handbook post type
+- Plugin activation & update hooks for managing capabilities
+
+### Changed
+- Handbook pages can now be viewed (but not edited) by Authors
+- The default capability for viewing the handbook admin page is now `read_private_handbooks`
+- Show helpdesk info only for users who can edit handbook posts
 
 ## [1.1.0] - 2023-01-30
 
@@ -36,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[unreleased]: https://github.com/devcollaborative/editor-handbook/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/devcollaborative/editor-handbook/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/devcollaborative/editor-handbook/releases/tag/v1.0.0
