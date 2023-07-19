@@ -23,11 +23,30 @@ To view all posts go to Dashboard > Handbook > Handbook. This is a simplified li
 
 To view the default WP post list go to Dashboard > Handbook > Edit Handbook.
 
-### Page Templates
+## Filters
 
-This plugin doesn't provide any templates for the Handbook pages, so they will follow the [WordPress template hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/#custom-post-types). You may have to make style adjustments or create a specific template (`single-handbook.php`) for Handbook pages.
+### `editor_handbook_template`
 
-## Handbook Capabilities
+Filters the template to use for displaying single handbook pages. Gets passed to `locate_template()`.
+
+#### Parameters
+
+`$template_names` *string|array*
+
+Filename of template(s) to use for displaying handbook posts.
+
+Default: `page.php`
+
+#### Example
+
+```php
+function my_handbook_template( $template_names ) {
+    return 'my-custom-handbook-template.php';
+}
+add_filter( 'editor_handbook_template', 'my_handbook_template' );
+```
+
+## Capabilities
 
 - **Administrators** and **Editors** have full access to read, update, and delete Handbook posts.
 - **Authors** have access to view Handbook posts.

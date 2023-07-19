@@ -220,3 +220,24 @@ function handbook_archive_redirect($archive_template){
   return $archive_template;
 }
 add_filter( 'archive_template', 'handbook_archive_redirect' ) ;
+
+/**
+ * Retrieves a template file for displaying handbook posts.
+ */
+function handbook_template_include( $template ) {
+	if ('handbook' === get_post_type()) {
+		/**
+		 * Customize template to use for displaying handbook posts.
+		 *
+		 * @param string|array $template_names Template filename(s) to search for, in order.
+		 */
+		$template_names = apply_filters( 'editor_handbook_template', 'page.php' );
+
+		if ( $template_names ) {
+			return locate_template( $template_names );
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'handbook_template_include' );

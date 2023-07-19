@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Use page.php for displaying handbook pages
+- Added `editor_handbook_template` filter for customizing the page template
 
 ### Changed
 
