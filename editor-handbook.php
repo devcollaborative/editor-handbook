@@ -33,6 +33,9 @@ function editor_handbook_update_check() {
 
 		// Set capabilities again, in case there have been updates.
 		editor_handbook_set_caps();
+
+		// Flush permalinks so the new page template is recognized.
+		flush_rewrite_rules();
 	}
 }
 add_action( 'plugins_loaded', 'editor_handbook_update_check' );

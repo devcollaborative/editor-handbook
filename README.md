@@ -29,6 +29,8 @@ To view the default WP post list go to Dashboard > Handbook > Edit Handbook.
 
 Filters the template to use for displaying single handbook pages. Gets passed to `locate_template()`.
 
+After setting a new template, you need to flush the rewrite rules by going to the Settings > Permalinks page in the admin dashboard.
+
 #### Parameters
 
 `$template_names` *string|array*
