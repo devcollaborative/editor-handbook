@@ -1,13 +1,15 @@
 <?php
 /**
- * Plugin Name: DevCollaborative Editor Handbook
+ * Plugin Name: Editor Handbook
  * Plugin URI: https://github.com/devcollaborative/editor-handbook
- * Description: Private content type for in-site documentation
+ * Description: Adds internal documentation for site editors.
  * Version: 1.2.0
+ * Requires at least: 4.7
+ * Requires PHP: 8
  * Author: DevCollaborative
  * Author URI: https://devcollaborative.com/
- * GitHub Plugin URI: devcollaborative/editor-handbook
- * Primary Branch: main
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 defined( 'ABSPATH' ) or exit;
