@@ -198,12 +198,6 @@ function handbook_admin_page() {
 				<li><a href="<?php echo get_permalink($post) ?>"><?php echo get_the_title($post) ?></a></li>
 			<?php endforeach; ?>
 		</ul>
-
-		<?php if ( current_user_can( 'edit_handbooks' ) ): ?>
-			<h3>Still need help?</h3>
-			<p>If you still need help, reach out by filing a helpdesk ticket.</p>
-			<p><a href="https://devcollaborative.com/helpdesk" target="_blank">https://devcollaborative.com/helpdesk</a></p>
-		<?php endif; ?>
 	</div>
 
 	<?php
