@@ -186,7 +186,7 @@ function handbook_admin_page() {
 		'post_status' 	  => 'private',
 		'posts_per_page' 	=> 999,
 		'order' 					=> 'ASC',
-		'orderby' 				=> 'menu_order',
+		'orderby' 				=> 'title',
 	));
 	?>
 
