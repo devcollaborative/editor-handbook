@@ -3,8 +3,8 @@
  * Plugin Name: Editor Handbook
  * Plugin URI: https://github.com/devcollaborative/editor-handbook
  * Description: Adds internal documentation for site editors.
- * Version: 1.2.0
- * Requires at least: 4.7
+ * Version: 2.0.0
+ * Requires at least: 6.4
  * Requires PHP: 8
  * Author: DevCollaborative
  * Author URI: https://devcollaborative.com/
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) or exit;
 
-define( 'EDITOR_HANDBOOK_VERSION', '1.2.0' );
+define( 'EDITOR_HANDBOOK_VERSION', '2.0.0' );
 
 /**
  * Run plugin update process on activation.

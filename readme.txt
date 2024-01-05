@@ -37,6 +37,14 @@ After setting a new template, flush the rewrite rules by going to **Settings > P
 
 == Changelog ==
 
+= 2.0.0 - 2024-01-05 =
+- Changed: Order handbook posts by title ASC
+- Changed: Set page.php as default for displaying handbook pages
+- Added: Add readme.txt & update plugin headers
+- Removed: reference to DevCollab Helpdesk
+
+**Full Changelog**: https://github.com/devcollaborative/editor-handbook/compare/v1.2.0...v2.0.0
+
 = 1.2.0 - 2023-06-06 =
 * Added: Custom capabilities for the Handbook post type
 * Added: Plugin activation & update hooks for managing capabilities

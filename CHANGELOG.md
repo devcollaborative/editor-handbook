@@ -7,8 +7,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
-- Use page.php for displaying handbook pages
-- Added `editor_handbook_template` filter for customizing the page template
 
 ### Changed
 
@@ -19,6 +17,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 
 ### Security
+
+## [2.0.0] - 2024-01-05
+
+- Changed: Order handbook posts by title ASC
+- Changed: Set page.php as default for displaying handbook pages
+- Added: Add readme.txt & update plugin headers
+- Removed: reference to DevCollab Helpdesk
 
 ## [1.2.0] - 2023-06-06
 
@@ -43,7 +48,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Initial release
 
-[unreleased]: https://github.com/devcollaborative/editor-handbook/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/devcollaborative/editor-handbook/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/devcollaborative/editor-handbook/releases/tag/v1.0.0
