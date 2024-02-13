@@ -200,7 +200,7 @@ function handbook_admin_page() {
 		<h3>Help Articles</h3>
 		<ul class="ul-disc">
 			<?php foreach ($posts as $post) : ?>
-				<li><a href="<?php echo get_permalink($post) ?>"><?php echo get_the_title($post) ?></a></li>
+				<li><a href="<?php echo esc_url( get_permalink($post) ); ?>"><?php echo esc_html( get_the_title($post) ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	</div>
