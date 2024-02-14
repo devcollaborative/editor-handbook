@@ -80,7 +80,7 @@ function editor_handbook_set_caps() {
 /**
  *  Register Custom Post Type for handbook
  */
-function devcollab_handbook_post_type() {
+function editor_handbook_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Handbook', 'Post Type General Name', 'devcollab' ),
 		'singular_name'         => _x( 'Handbook page', 'Post Type Singular Name', 'devcollab' ),
@@ -131,20 +131,20 @@ function devcollab_handbook_post_type() {
 	register_post_type( 'handbook', $args );
 
 }
-add_action( 'init', 'devcollab_handbook_post_type', 5 );
+add_action( 'init', 'editor_handbook_post_type', 5 );
 
 /**
  * Force handbook post types to private. Overrides the "publish" post status to always
  * change to private.
  */
-function handbook_force_private($post) {
+function editor_handbook_force_private($post) {
 	if ($post['post_type'] === 'handbook' && $post['post_status'] === 'publish') {
 		$post['post_status'] = 'private';
 	}
 
 	return $post;
 }
-add_filter('wp_insert_post_data', 'handbook_force_private');
+add_filter('wp_insert_post_data', 'editor_handbook_force_private');
 
 /**
  * Remove "Private: " from the beginning of private posts for the handbook CPT.
@@ -152,19 +152,19 @@ add_filter('wp_insert_post_data', 'handbook_force_private');
  * @param string $prepend Text displayed before the post title.
  * @param WP_Post $post Current post object.
  */
-function handbook_private_title_format($prepend, $post) {
+function editor_handbook_private_title_format($prepend, $post) {
 	if ($post->post_type === 'handbook') {
 		return '%s';
 	}
 
 	return $prepend;
 }
-add_filter('private_title_format', 'handbook_private_title_format', 10, 2);
+add_filter('private_title_format', 'editor_handbook_private_title_format', 10, 2);
 
 /**
  * Add Handbook admin page to the CPT submenu.
  */
-function handbook_admin_menu() {
+function editor_handbook_admin_menu() {
 	$handbook = get_post_type_object('handbook');
 
 	add_submenu_page(
@@ -173,11 +173,11 @@ function handbook_admin_menu() {
     $handbook->labels->menu_name,
     'read_private_handbooks',
     'handbook',
-    'handbook_admin_page',
+    'editor_handbook_admin_page',
 		0
 	);
 }
-add_action( 'admin_menu', 'handbook_admin_menu' );
+add_action( 'admin_menu', 'editor_handbook_admin_menu' );
 
 /**
  * Create the Handbook admin page to list all of the articles.
@@ -185,7 +185,7 @@ add_action( 'admin_menu', 'handbook_admin_menu' );
  * Using an admin page means we don't need to worry about there being a
  * suitable front-end template for displaying these posts.
  */
-function handbook_admin_page() {
+function editor_handbook_admin_page() {
 	$posts = get_posts(array(
 		'post_type' 			=> 'handbook',
 		'post_status' 	  => 'private',
@@ -211,21 +211,20 @@ function handbook_admin_page() {
 /**
  * Redirect handbook archive page to our custom admin page.
  */
-function handbook_archive_redirect($archive_template){
+function editor_handbook_archive_redirect($archive_template){
   if ( is_post_type_archive ( 'handbook' ) ) {
 		wp_redirect(admin_url() . 'edit.php?post_type=handbook&page=handbook');
 		exit();
   }
   return $archive_template;
 }
-add_filter( 'archive_template', 'handbook_archive_redirect' ) ;
+add_filter( 'archive_template', 'editor_handbook_archive_redirect' ) ;
 
 /**
  * Retrieves a template file for displaying handbook posts.
  * 
  */
-function handbook_template_include( $template ) {
-
+function editor_handbook_template_include( $template ) {
 	if ('handbook' === get_post_type()) {
 
 		/**
@@ -247,4 +246,4 @@ function handbook_template_include( $template ) {
 
 	return $template;
 }
-add_filter( 'template_include', 'handbook_template_include' );
+add_filter( 'template_include', 'editor_handbook_template_include' );
