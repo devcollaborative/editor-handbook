@@ -232,7 +232,7 @@ function editor_handbook_template_include( $template ) {
 		 *
 		 * @param string|array $template_names Template filename(s) to search for, in order.
 		 */
-		$template_names = apply_filters( 'editor_handbook_template', 'index.php' );
+		$template_names = apply_filters( 'editor_handbook_template', 'page.php' );
 
 		if ( $template_names ) {
 
