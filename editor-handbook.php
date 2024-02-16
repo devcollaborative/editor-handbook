@@ -3,7 +3,7 @@
  * Plugin Name: Editor Handbook
  * Plugin URI: https://github.com/devcollaborative/editor-handbook
  * Description: Adds internal documentation for site editors.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Requires at least: 6.4
  * Requires PHP: 8
  * Author: DevCollaborative
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) or exit;
 
-define( 'EDITOR_HANDBOOK_VERSION', '2.0.0' );
+define( 'EDITOR_HANDBOOK_VERSION', '2.0.1' );
 
 /**
  * Run plugin update process on activation.
@@ -222,7 +222,7 @@ add_filter( 'archive_template', 'editor_handbook_archive_redirect' ) ;
 
 /**
  * Retrieves a template file for displaying handbook posts.
- * 
+ *
  */
 function editor_handbook_template_include( $template ) {
 	if ('handbook' === get_post_type()) {
@@ -239,7 +239,7 @@ function editor_handbook_template_include( $template ) {
 			$template_found = locate_template( $template_names );
 
 			if ( !empty( $template_found ) ){
-				return $template_found; 
+				return $template_found;
 			}
 		}
 	}

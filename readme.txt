@@ -3,7 +3,7 @@ Contributors: devcollab, hbrokmeier, cparkinson
 Tags: documentation
 Requires at least: 6.0
 Tested up to: 6.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,14 @@ add_filter( 'editor_handbook_template', 'my_handbook_template' );
 After setting a new template, flush the rewrite rules by going to **Settings > Permalinks** in the admin dashboard.
 
 == Changelog ==
+
+= 2.0.1 - 2024-02-16 =
+* Security: Escape echo statements
+* Fixed: Update stable & readme versions to match
+* Fixed: Use the editor_handbook prefix for all functions
+* Fixed: Whitescreen bug when template doesn't exist
+
+**Full Changelog**: https://github.com/devcollaborative/editor-handbook/compare/v2.0.0...v2.0.1
 
 = 2.0.0 - 2024-01-05 =
 - Changed: Order handbook posts by title ASC

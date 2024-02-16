@@ -18,6 +18,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
+## [2.0.1] - 2024-02-16
+* Security: Escape echo statements
+* Fixed: Update stable & readme versions to match
+* Fixed: Use the editor_handbook prefix for all functions
+* Fixed: Whitescreen bug when template doesn't exist
+
 ## [2.0.0] - 2024-01-05
 
 - Changed: Order handbook posts by title ASC
@@ -49,6 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Initial release
 
 [unreleased]: https://github.com/devcollaborative/editor-handbook/compare/v2.0.0...HEAD
+[2.0.1]: https://github.com/devcollaborative/editor-handbook/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/devcollaborative/editor-handbook/compare/v1.0.0...v1.1.0
