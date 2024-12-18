@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/devcollaborative/editor-handbook
  * Description: Adds internal documentation for site editors.
  * Version: 2.0.2
- * Requires at least: 6.4
+ * Requires at least: 6.7.1
  * Requires PHP: 8
  * Author: DevCollaborative
  * Author URI: https://devcollaborative.com/

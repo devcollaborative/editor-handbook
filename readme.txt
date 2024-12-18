@@ -2,7 +2,7 @@
 Contributors: devcollab, hbrokmeier, cparkinson
 Tags: documentation
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.7.1
 Stable tag: 2.0.2
 Requires PHP: 8.0
 License: GPLv2 or later
