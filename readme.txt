@@ -3,7 +3,7 @@ Contributors: devcollab, hbrokmeier, cparkinson
 Tags: documentation
 Requires at least: 6.0
 Tested up to: 6.7.1
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,9 @@ add_filter( 'editor_handbook_template', 'my_handbook_template' );
 After setting a new template, flush the rewrite rules by going to **Settings > Permalinks** in the admin dashboard.
 
 == Changelog ==
+
+= 2.0.3 - 2024-12-18 =
+* Bump tested up to 6.7.1
 
 = 2.0.2 - 2024-03-20 =
 * Fixed: Update text domain to match plugin slug
