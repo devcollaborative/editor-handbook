@@ -119,7 +119,7 @@ function editor_handbook_post_type() {
 		'hierarchical'          => false,
 		'menu_position'         => 3,
 		'menu_icon'   				  => 'dashicons-editor-help',
-		'show_in_admin_bar'     => false,
+		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => false,
 		'show_in_rest'				  => true,
 		'can_export'            => true,
