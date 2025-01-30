@@ -37,6 +37,11 @@ After setting a new template, flush the rewrite rules by going to **Settings > P
 
 == Changelog ==
 
+= 2.0.4 - 2025-01-30 =
+* Added "Edit" link in Admin Toolbar
+
+**Full Changelog**: https://github.com/devcollaborative/editor-handbook/compare/v2.0.3...v2.0.4
+
 = 2.0.3 - 2024-12-18 =
 * Bump tested up to 6.7.1
 
