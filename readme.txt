@@ -2,7 +2,7 @@
 Contributors: devcollab, hbrokmeier, cparkinson
 Tags: documentation
 Requires at least: 6.0
-Tested up to: 6.7.1
+Tested up to: 6.8
 Stable tag: 2.0.4
 Requires PHP: 8.0
 License: GPLv2 or later
@@ -36,6 +36,9 @@ add_filter( 'editor_handbook_template', 'my_handbook_template' );
 After setting a new template, flush the rewrite rules by going to **Settings > Permalinks** in the admin dashboard.
 
 == Changelog ==
+
+= 2.0.5 - 2024-12-18 =
+* Bump tested up to 6.8
 
 = 2.0.4 - 2025-01-30 =
 * Added "Edit" link in Admin Toolbar
