@@ -17,9 +17,13 @@ defined( 'ABSPATH' ) or exit;
 define( 'EDITOR_HANDBOOK_VERSION', '2.0.5' );
 
 /**
- * Run plugin update process on activation.
+ * Run functions on plugin activation.
  */
 function editor_handbook_activate() {
+	// Flush permalinks so Handbook CPT rewrite rules are recognized.
+	flush_rewrite_rules();
+
+	// Run plugin update process.
 	editor_handbook_update_check();
 }
 register_activation_hook( __FILE__, 'editor_handbook_activate' );
@@ -35,9 +39,6 @@ function editor_handbook_update_check() {
 
 		// Set capabilities again, in case there have been updates.
 		editor_handbook_set_caps();
-
-		// Flush permalinks so the new page template is recognized.
-		flush_rewrite_rules();
 	}
 }
 add_action( 'plugins_loaded', 'editor_handbook_update_check' );
